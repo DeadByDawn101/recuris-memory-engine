@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "recuris-memory-engine"
+version = "0.1.0"
+description = "Independent reference engine for bounded experiential-working-memory evolution"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "RavenX AI Labs"}]
+dependencies = []
+
+[project.scripts]
+recuris-memory = "recuris_memory.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

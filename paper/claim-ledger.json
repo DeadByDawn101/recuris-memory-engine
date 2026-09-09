@@ -1,0 +1,74 @@
+[
+  {
+    "id": "REC-001",
+    "statement": "The evolving memory-control layer consists of experiential memory, a working-memory specification, an invocation policy, and checker set.",
+    "source_locator": "arXiv:2608.24876v1 section 2.1.1",
+    "status": "verified",
+    "implementation_target": "src/recuris_memory/models.py",
+    "evidence": "paper HTML SHA-256 in source-manifest.json"
+  },
+  {
+    "id": "REC-002",
+    "statement": "Working state records each goal's content, status, supporting evidence, and optional blocker.",
+    "source_locator": "section 2.2.1",
+    "status": "verified",
+    "implementation_target": "GoalState and WorkingState",
+    "evidence": "tests/test_kernel.py"
+  },
+  {
+    "id": "REC-003",
+    "statement": "A fixed kernel commits only state transitions supported by explicit checker results over environment evidence.",
+    "source_locator": "section 2.2.3",
+    "status": "verified",
+    "implementation_target": "EvidenceKernel.commit",
+    "evidence": "tests/test_kernel.py"
+  },
+  {
+    "id": "REC-004",
+    "statement": "Skill invocation is grounded in verified working state and a defined execution event rather than selected from the full history.",
+    "source_locator": "section 2.2.2",
+    "status": "verified",
+    "implementation_target": "InvocationPolicy.select",
+    "evidence": "tests/test_invocation.py"
+  },
+  {
+    "id": "REC-005",
+    "statement": "Failure-driven patches are scoped to diagnosed memory components and non-implicated components are copied unchanged.",
+    "source_locator": "sections 2.3.1-2.3.2",
+    "status": "verified",
+    "implementation_target": "apply_scoped_patch",
+    "evidence": "tests/test_evolution.py"
+  },
+  {
+    "id": "REC-006",
+    "statement": "Candidate patches are admitted only after repairing the source task and satisfying a held-out anchor regression criterion.",
+    "source_locator": "section 2.3.3",
+    "status": "verified",
+    "implementation_target": "AdmissionGate.evaluate",
+    "evidence": "tests/test_evolution.py"
+  },
+  {
+    "id": "REC-007",
+    "statement": "The reference engine uses deterministic Python callbacks for checkers and evaluators.",
+    "source_locator": "local design decision",
+    "status": "implemented",
+    "implementation_target": "Checker and Evaluator protocols",
+    "evidence": "docs/IMPLEMENTATION-BRIEF.md"
+  },
+  {
+    "id": "REC-008",
+    "statement": "Recuris improves task success in 35 of 37 completed model-benchmark pairs.",
+    "source_locator": "abstract and section 3.2",
+    "status": "not-reproduced",
+    "implementation_target": "none",
+    "evidence": "reported by paper; no local benchmark reproduction"
+  },
+  {
+    "id": "REC-009",
+    "statement": "On Terminal-Bench 2.1, most headline improvement is explained by retry budget; matched-budget adaptation adds 2.3 points with p=0.774.",
+    "source_locator": "section 3.5 table 8 discussion",
+    "status": "not-reproduced",
+    "implementation_target": "none",
+    "evidence": "reported by paper; retained as an anti-overclaim constraint"
+  }
+]

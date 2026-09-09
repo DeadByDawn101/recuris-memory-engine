@@ -1,0 +1,153 @@
+{
+  "final_state": {
+    "goals": [
+      {
+        "blocker": null,
+        "content": "Persist the record",
+        "evidence": [
+          "write_id=demo-001"
+        ],
+        "goal_id": "persist",
+        "status": "done"
+      }
+    ],
+    "step": 2,
+    "task_id": "demo"
+  },
+  "trace": [
+    {
+      "action": {
+        "arguments": {
+          "record": "demo"
+        },
+        "draft": true,
+        "name": "store",
+        "state_changing": true
+      },
+      "checker_decisions": [
+        {
+          "accepted": false,
+          "goal_id": "persist",
+          "reason": "draft action was not executed"
+        }
+      ],
+      "invocation": {
+        "event": "state_changing_draft",
+        "retrieval_key": "store",
+        "skill_ids": [
+          "verify-write"
+        ]
+      },
+      "observation": {
+        "message": "synthetic not-executed result",
+        "ok": false,
+        "receipt": {}
+      },
+      "post_state": {
+        "goals": [
+          {
+            "blocker": null,
+            "content": "Persist the record",
+            "evidence": [],
+            "goal_id": "persist",
+            "status": "pending"
+          }
+        ],
+        "step": 1,
+        "task_id": "demo"
+      },
+      "pre_state": {
+        "goals": [
+          {
+            "blocker": null,
+            "content": "Persist the record",
+            "evidence": [],
+            "goal_id": "persist",
+            "status": "pending"
+          }
+        ],
+        "step": 0,
+        "task_id": "demo"
+      },
+      "proposals": [
+        {
+          "blocker": null,
+          "evidence": [
+            "model claimed success"
+          ],
+          "goal_id": "persist",
+          "status": "done"
+        }
+      ],
+      "step": 0
+    },
+    {
+      "action": {
+        "arguments": {
+          "record": "demo"
+        },
+        "draft": false,
+        "name": "store",
+        "state_changing": true
+      },
+      "checker_decisions": [
+        {
+          "accepted": true,
+          "goal_id": "persist",
+          "reason": "receipt verified"
+        }
+      ],
+      "invocation": {
+        "event": "turn_boundary",
+        "retrieval_key": null,
+        "skill_ids": []
+      },
+      "observation": {
+        "message": "stored",
+        "ok": true,
+        "receipt": {
+          "write_id": "demo-001"
+        }
+      },
+      "post_state": {
+        "goals": [
+          {
+            "blocker": null,
+            "content": "Persist the record",
+            "evidence": [
+              "write_id=demo-001"
+            ],
+            "goal_id": "persist",
+            "status": "done"
+          }
+        ],
+        "step": 2,
+        "task_id": "demo"
+      },
+      "pre_state": {
+        "goals": [
+          {
+            "blocker": null,
+            "content": "Persist the record",
+            "evidence": [],
+            "goal_id": "persist",
+            "status": "pending"
+          }
+        ],
+        "step": 1,
+        "task_id": "demo"
+      },
+      "proposals": [
+        {
+          "blocker": null,
+          "evidence": [
+            "write_id=demo-001"
+          ],
+          "goal_id": "persist",
+          "status": "done"
+        }
+      ],
+      "step": 1
+    }
+  ]
+}

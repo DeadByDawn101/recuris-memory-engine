@@ -1,0 +1,32 @@
+[
+  {
+    "id": "P2C-001",
+    "title": "Paper-derived architecture and provenance",
+    "status": "done",
+    "evidence": [
+      "docs/IMPLEMENTATION-BRIEF.md",
+      "paper/source-manifest.json",
+      "paper/claim-ledger.json"
+    ]
+  },
+  {
+    "id": "P2C-002",
+    "title": "Executable Recuris reference engine",
+    "status": "done",
+    "evidence": [
+      "src/recuris_memory",
+      "tests"
+    ]
+  },
+  {
+    "id": "P2C-003",
+    "title": "Independent deterministic verification",
+    "status": "done",
+    "evidence": [
+      "init.sh",
+      ".github/workflows/qa.yml",
+      "evidence/demo-trace.json",
+      "evidence/QA.md"
+    ]
+  }
+]
